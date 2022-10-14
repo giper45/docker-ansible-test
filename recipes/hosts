@@ -1,0 +1,7 @@
+[ansible-test:vars]
+ansible_connection=ssh
+ansible_user=root
+ansible_ssh_pass=root
+
+[ansible-test]
+192.168.22.2

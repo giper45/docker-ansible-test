@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  ansible-test:
+    build: ansibleTest
+    networks:
+      app_net:
+        ipv4_address: 192.168.22.2
+  ansible:
+    build: ansible
+    networks:
+      app_net:
+        ipv4_address: 192.168.22.3
+    volumes:
+      - ./recipes:/recipes
+
+networks:
+  app_net:
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.22.0/24"
+
